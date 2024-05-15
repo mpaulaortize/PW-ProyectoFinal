@@ -1,0 +1,77 @@
+.ourpeople-img {
+  height: 100%;
+  width: 100%;
+  margin-top: -1%;
+}
+
+/*Section one*/
+.section-one-text {
+  background-color: white;
+  padding: 10%;
+  border-radius: 10px;
+}
+
+.section-one-text p {
+  color: #0a0038;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  margin-top: 2%;
+
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+.button-our-people {
+  position: absolute;
+  top: 290%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 15%;
+
+  outline: none;
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 999px;
+  padding: 5px 20px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 18px;
+}
+
+/*Our vision*/
+.our-vision {
+  background-color: #ffbddb;
+  padding: 10% 20%;
+  margin-top: -1%;
+}
+
+.our-vision p {
+  color: #0a0038;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  margin-top: 2%;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+.our-vision h4 {
+  color: #0a0038;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+
+  margin-top: 2%;
+  margin-bottom: 5%;
+  width: 60%;
+  text-align: start;
+
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}

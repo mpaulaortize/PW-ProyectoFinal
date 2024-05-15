@@ -1,0 +1,68 @@
+* {
+  font-family: "Inter";
+  overflow-x: hidden;
+}
+
+.General-Container-NavBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  color: #000000;
+}
+
+.Nav-Bar {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.Nav-Bar li {
+  display: flex;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.Nav-Bar a {
+  text-decoration: none;
+  color: inherit;
+  margin-left: 20px;
+}
+
+.Nav-Bar a:first-child {
+  margin-left: 0;
+}
+
+.General-Container-NavBar img {
+  width: 80px;
+  height: auto;
+}
+
+.Nav-Bar a.active {
+  font-weight: bold;
+}
+
+.General-Container-NavBar {
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 95%;
+  z-index: 1000;
+  margin-top: 2%;
+}
+.icono-menu {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .icono-menu {
+    display: flex;
+    margin-right: 20px;
+    width: 20px;
+    height: 20px;
+  }
+}
+.Nav-Bar {
+  display: none;
+}

@@ -1,0 +1,263 @@
+.login-container {
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.background-image {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  z-index: 20;
+  position: relative;
+}
+
+.image-mobile {
+  position: absolute;
+  bottom: -310px;
+  left: -200px;
+  z-index: 10;
+  object-fit: cover;
+  object-position: top;
+}
+
+.image {
+  display: none;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  margin-right: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+h1,
+h3 {
+  text-align: center;
+  margin-left: 32px;
+  margin-right: 32px;
+}
+
+h1 {
+  font-size: 16px;
+  margin-top: 0px;
+  justify-content: center;
+}
+
+h3 {
+  font-family: Inter;
+  font-weight: normal;
+  font-size: 15px;
+  margin-bottom: 5px;
+  justify-content: center;
+}
+
+.button {
+  height: 40px;
+  width: 140px;
+  position: relative;
+  background-color: transparent;
+  cursor: pointer;
+  border: 2px solid #252525;
+  overflow: hidden;
+  border-radius: 30px;
+  color: #333;
+  transition: all 0.5s ease-in-out;
+}
+
+.btn-txt {
+  z-index: 1;
+  font-weight: 500;
+  font-family: Inter;
+}
+
+.type1::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: all 0.5s ease-in-out;
+  background-color: #333;
+  border-radius: 30px;
+  visibility: hidden;
+  height: 10px;
+  width: 10px;
+  z-index: -1;
+}
+
+.button:hover {
+  box-shadow: 1px 1px 200px #252525;
+  color: #fff;
+  border: none;
+}
+
+.type1:hover::after {
+  visibility: visible;
+  transform: scale(100) translateX(2px);
+}
+
+.input-wrapper {
+  position: relative;
+  width: 280px;
+  margin: 20px auto;
+}
+
+.input-box {
+  font-size: 16px;
+  padding: 10px 0;
+  border: none;
+  border-bottom: 1px solid #121212;
+  color: #121212;
+  width: 100%;
+  background-color: transparent;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.input-box:focus {
+  border-color: #121212;
+  outline: none;
+}
+
+.input-box:focus + .underline {
+  transform: scaleX(1);
+}
+
+@media screen and (min-width: 1024px) {
+  .login-container {
+    overflow-y: hidden;
+  }
+
+  .login {
+    width: 55%;
+    justify-content: start;
+    align-items: start;
+  }
+
+  .image {
+    display: flex;
+    width: 45%;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .image img {
+    width: 815px;
+    position: relative;
+    left: -100px;
+    bottom: -90px;
+  }
+
+  .background-image {
+    display: flex;
+    place-items: center;
+    min-height: 100vh;
+    position: relative;
+    background: none;
+    gap: 55px;
+  }
+
+  .image-mobile {
+    display: none;
+  }
+
+  h1,
+  h3 {
+    margin-left: 52px;
+  }
+
+  h1 {
+    font-size: 56px;
+    margin-top: 0px;
+    text-align: left;
+  }
+
+  h3 {
+    font-family: Inter;
+    font-weight: normal;
+    font-size: 15px;
+    margin-bottom: 5px;
+  }
+
+  .button {
+    height: 40px;
+    width: 140px;
+    position: relative;
+    background-color: transparent;
+    cursor: pointer;
+    border: 2px solid #252525;
+    overflow: hidden;
+    border-radius: 30px;
+    color: #333;
+    transition: all 0.5s ease-in-out;
+    margin-left: 52px;
+  }
+
+  .button-container {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .btn-txt {
+    z-index: 1;
+    font-weight: 500;
+    font-family: Inter;
+    font-size: 16px;
+  }
+
+  .type1::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: all 0.5s ease-in-out;
+    background-color: #333;
+    border-radius: 30px;
+    visibility: hidden;
+    height: 10px;
+    width: 10px;
+    z-index: -1;
+  }
+
+  .button:hover {
+    box-shadow: 1px 1px 200px #252525;
+    color: #fff;
+    border: none;
+  }
+
+  .type1:hover::after {
+    visibility: visible;
+    transform: scale(100) translateX(2px);
+  }
+
+  .input-wrapper {
+    position: relative;
+    width: 480px;
+    margin: 20px 0px 20px 52px;
+  }
+
+  .input-box {
+    font-size: 22px;
+    padding: 10px 0;
+    border: none;
+    border-bottom: 1px solid #121212;
+    color: #121212;
+    width: 100%;
+    background-color: transparent;
+    transition: border-color 0.3s ease-in-out;
+  }
+
+  .input-box:focus {
+    border-color: #121212;
+    outline: none;
+  }
+
+  .input-box:focus + .underline {
+    transform: scaleX(1);
+  }
+}
