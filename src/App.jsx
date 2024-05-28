@@ -14,7 +14,7 @@ export function App() {
   return (
     <>
       <div>
-        <NavBar /> {}
+        <NavBar /> 
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/work" element={<WorkPage />} />

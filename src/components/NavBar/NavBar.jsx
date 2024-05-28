@@ -2,42 +2,55 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./NavBar.css";
 import Logo from "../../../public/imgs/OurPeople/Logo.png";
-import Menu from "../../../public/icons/Icono-menu.png";
+import MenuIcon from "../../../public/icons/Icono-menu.png";
 import { LINKS } from "../../Cons/links";
 
 export function NavBar() {
   const [showMenu, setShowMenu] = useState(false);
 
-  const handleShowMenu = () => {
+  const handleToggleMenu = () => {
     setShowMenu(!showMenu);
+  };
+
+  const closeMenu = () => {
+    setShowMenu(false);
   };
 
   return (
     <div className="General-Container-NavBar">
-      <img src={Logo} alt="logo" />
+      <img src={Logo} alt="logo" className="logo" />
       <img
-        src={Menu}
+        src={MenuIcon}
         alt="menu"
         className="icono-menu"
-        style={{ width: "18px", height: "18px" }}
-        onClick={handleShowMenu}
+        onClick={handleToggleMenu}
       />
 
       <div className={`Nav-Bar ${showMenu ? "active" : ""}`}>
-        {LINKS.map((item, index) => (
-          <MenuItem key={index} item={item} />
-        ))}
+        <ul>
+          {LINKS.map((item, index) => (
+            <MenuItem key={index} item={item} closeMenu={closeMenu} />
+          ))}
+        </ul>
       </div>
     </div>
   );
 }
 
-function MenuItem({ item }) {
+function MenuItem({ item, closeMenu }) {
   const { text, url } = item;
+
+  const handleClick = () => {
+    closeMenu(); 
+  };
 
   return (
     <li>
-      <NavLink to={url} activeClassName="active" exact={true}>
+      <NavLink
+        to={url}
+        className={({ isActive }) => (isActive ? "active" : "")}
+        onClick={handleClick}
+      >
         {text}
       </NavLink>
     </li>
