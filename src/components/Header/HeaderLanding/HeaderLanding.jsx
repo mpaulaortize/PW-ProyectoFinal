@@ -1,4 +1,4 @@
-import React from "react";
+/*import React from "react";
 import "./HeaderLanding.css";
 
 export function HeaderLanding() {
@@ -23,3 +23,4 @@ export function HeaderLanding() {
     </header>
   );
 }
+*/

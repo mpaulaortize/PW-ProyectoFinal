@@ -19,7 +19,6 @@
   font-size: 100px;
   font-style: normal;
   font-weight: 700;
-  line-height: 90%;
   text-transform: uppercase;
 
   position: absolute;
@@ -47,7 +46,6 @@
   font-size: 15px;
   font-style: normal;
   font-weight: 600;
-  line-height: 150%;
 }
 
 .left {
@@ -63,7 +61,6 @@
   font-size: 15px;
   font-style: normal;
   font-weight: 600;
-  line-height: 150%;
 }
 
 .left p {
