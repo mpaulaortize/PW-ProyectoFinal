@@ -29,7 +29,7 @@ export function Footer() {
           <p>Contact Us</p>
         </div>
       </div>
-      <div>
+      <div className="hr-footer">
         <hr />
       </div>
       <div className="text-down">

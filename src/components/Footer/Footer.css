@@ -5,8 +5,8 @@ footer {
   align-content: center;
   flex-direction: column;
   justify-content: center;
-  padding-left: 150px;
-  padding-right: 150px;
+  padding: 0;
+  flex-direction: column;
 }
 
 .text-footer p,
@@ -14,35 +14,46 @@ h2 {
   color: #ffff;
 }
 
+.text-footer h2 {
+  text-align: center;
+  font-family: MangoGrotesque;
+}
+
 .text-up {
   display: flex;
   margin-top: 20px;
-  justify-content: space-between;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
-hr {
-  height: 0px;
-  background-color: #ffff;
-  width: 100%;
-  margin-top: 20px;
+.hr-footer hr {
+  display: none;
 }
 
 .text-up p {
   font-family: "Inter", sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 14px;
+  font-size: 9px;
+  padding-left: 70px;
+  padding-right: 70px;
+  margin-top: 10px;
 }
 
 .link-pages {
-  display: flex;
+  display: grid;
   align-items: end;
-  gap: 18px;
+  gap: 8px;
+  justify-items: center;
+  padding: 4px;
 }
 
 .link-pages p {
   font-size: 14px;
   cursor: pointer;
+  color: #ffff;
+  font-weight: 800;
 }
 
 .link-pages p:hover {
@@ -52,12 +63,14 @@ hr {
 .text-footer {
   box-sizing: content-box;
   width: 350px;
+  text-align: center;
 }
 
 .text-down {
   display: flex;
   justify-content: space-between;
   letter-spacing: 2px;
+  flex-direction: column-reverse;
 }
 
 .text-down p {
@@ -65,26 +78,32 @@ hr {
   font-weight: 400;
   font-style: normal;
   font-size: 12px;
+  color: #ffff;
+  text-align: center;
 }
 
 .social {
   display: flex;
   gap: 30px;
   align-items: center;
+  flex-direction: column;
+}
+
+.social p {
+  display: none;
 }
 
 .icon {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 30px;
   cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .arrow {
-  width: 60px;
-  height: 1px;
-  background-color: #ffff;
-  position: relative;
+  display: none;
 }
 
 .arrow::after {
@@ -118,18 +137,29 @@ hr {
   h2 {
     color: #ffff;
   }
+
+  .text-footer h2 {
+    text-align: left;
+    font-family: MangoGrotesque;
+  }
   
   .text-up {
     display: flex;
     margin-top: 20px;
     justify-content: space-between;
+    flex-direction: row;
+    align-items: flex-end;
   }
   
-  hr {
+  .hr-footer hr {
+    display: flex;
     height: 0px;
     background-color: #ffff;
     width: 100%;
     margin-top: 20px;
+    margin-bottom: 20px;
+    justify-content: center;
+    margin-left: 0;
   }
   
   .text-up p {
@@ -137,17 +167,22 @@ hr {
     font-weight: 400;
     font-style: normal;
     font-size: 14px;
+    padding: 0;
+    margin-top: 0;
   }
   
   .link-pages {
     display: flex;
     align-items: end;
     gap: 18px;
+    padding: 0;
   }
   
   .link-pages p {
     font-size: 14px;
     cursor: pointer;
+    color: #ffff;
+    font-weight: 800;
   }
   
   .link-pages p:hover {
@@ -157,12 +192,14 @@ hr {
   .text-footer {
     box-sizing: content-box;
     width: 350px;
+    text-align: left;
   }
   
   .text-down {
     display: flex;
     justify-content: space-between;
     letter-spacing: 2px;
+    flex-direction: row;
   }
   
   .text-down p {
@@ -170,12 +207,19 @@ hr {
     font-weight: 400;
     font-style: normal;
     font-size: 12px;
+    color: #ffff;
+    text-align: left;
   }
   
   .social {
     display: flex;
     gap: 30px;
     align-items: center;
+    flex-direction: row;
+  }
+
+  .social p {
+    display: flex;
   }
   
   .icon {
@@ -183,9 +227,12 @@ hr {
     align-items: center;
     gap: 10px;
     cursor: pointer;
+    margin-top: 0;
+    margin-bottom: 0;
   }
   
   .arrow {
+    display: flex;
     width: 60px;
     height: 1px;
     background-color: #ffff;
