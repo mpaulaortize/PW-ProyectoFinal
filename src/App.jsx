@@ -10,6 +10,7 @@ import WorkPage from "./pages/WorkPage/WorkPage";
 import UploadWork from "./pages/UploadWork/Uploadwork";
 import { Landing } from "./pages/LandingPage/LandingPage";
 import { Login } from "./pages/LoginPage/LoginPage";
+import { WorkShow } from "./pages/WorkShow/WorkShow";
 
 export function App() {
   return (
@@ -22,8 +23,8 @@ export function App() {
               <Route path="/work" element={<WorkPage />} />
               <Route path="/sobre-nosotros" element={<OurPeople />} />
               <Route path="/contacto" element={<ContactUs />} />
-              <Route path="/Upload" element={<UploadWork />} />
               <Route path="/Login" element={<Login />} />
+              <Route path="/show" element={<WorkShow />} />
               <Route
                 path="/Upload"
                 element={

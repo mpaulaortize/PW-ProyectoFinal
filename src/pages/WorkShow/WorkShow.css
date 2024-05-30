@@ -1,0 +1,37 @@
+.img-project {
+    width: 700px;
+    height: 500px;
+    margin-bottom: 5%;
+  }
+  
+  .img-proyectdetails {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .text-projectdetails {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .section-heading {
+    font-weight: bold;
+    text-align: left;
+    width: 100%;
+    max-width: 800px; 
+  }
+  
+  .section-paragraph {
+    text-align: left;
+    width: 100%;
+    max-width: 800px; 
+    margin-bottom: 20px; 
+  }
+  .title-projectdetail {
+    font-weight: bold;
+    font-size: 30px;
+    color: black;
+    padding-left: 350px;
+    padding-bottom: 20px;
+  }

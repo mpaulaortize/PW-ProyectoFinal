@@ -14,6 +14,8 @@ export function Landing() {
         navigate("/work")
     }
 
+    
+
   return (
     <main className="landing-container">
     <div className="background-land">
