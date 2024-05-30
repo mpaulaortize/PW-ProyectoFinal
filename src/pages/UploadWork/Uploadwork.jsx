@@ -22,7 +22,10 @@ function Upload() {
   async function handleUpload(e) {
     e.preventDefault();
 
+<<<<<<< Updated upstream
+=======
     // Validación de campos obligatorios
+>>>>>>> Stashed changes
     let validationErrors = {};
     if (!title) validationErrors.title = "Title is required";
     if (!description) validationErrors.description = "Description is required";
@@ -53,7 +56,10 @@ function Upload() {
         images: imageUrls,
       });
 
+<<<<<<< Updated upstream
+=======
       // Limpiar los campos del formulario
+>>>>>>> Stashed changes
       setTitle("");
       setDescription("");
       setTypeProject("");
@@ -180,9 +186,9 @@ function Upload() {
               <option value="" disabled hidden>
                 Select an option
               </option>
-              <option value="ux-ui">UX / UI Project</option>
-              <option value="graphic">Graphic Project</option>
-              <option value="brand">Brand Project</option>
+              <option value="UX/UI Design">UX / UI Project</option>
+              <option value="Graphic Design">Graphic Project</option>
+              <option value="Brand Design">Brand Project</option>
             </select>
             {errors.typeProject && <p className="error-message">{errors.typeProject}</p>}
           </div>

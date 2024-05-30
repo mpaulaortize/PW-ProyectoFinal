@@ -120,6 +120,7 @@ p {
   background-color: #f9f9f9;
   outline: none;
   padding: 0 20px;
+  text-align: start;
 }
 
 input[type="text"] {
