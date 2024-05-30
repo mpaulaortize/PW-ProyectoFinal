@@ -7,7 +7,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
   color: #000000;
 }
 
@@ -71,6 +70,10 @@
   .icono-menu {
     display: flex;
     width: 30px;
+  }
+
+  .logo {
+    margin-left: 35px;
   }
 
   .Nav-Bar {

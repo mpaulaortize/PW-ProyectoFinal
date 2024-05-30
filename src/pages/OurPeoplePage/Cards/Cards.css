@@ -1,7 +1,7 @@
 .general-div-cards {
   position: absolute;
-  top: 250%;
-  left: 39%;
+  top: 280%;
+  left: 40%;
   transform: translate(-50%, -50%);
   width: 100%;
 }
@@ -15,7 +15,6 @@
 
 .card {
   width: 250px;
-  height: 350px;
   background-color: white;
   border-radius: 8px;
   text-align: center;
@@ -30,8 +29,8 @@
   font-weight: 900;
 
   margin-top: 2%;
-  margin-bottom: 70%;
-  width: 60%;
+  margin-bottom: 50%;
+ 
   text-align: start;
 
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;

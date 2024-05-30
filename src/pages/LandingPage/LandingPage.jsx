@@ -55,12 +55,11 @@ export function Landing() {
         </div>
         <div className="last-section">
             <h4>OUR WORK</h4>
-            <p>We are storytellers, strategists, 
-              and creators driven by the belief <br/>
-              that <b>every design should have a purpose.</b> 
-              Our mission is simple: <br/>
-              to craft meaningful experiences that resonate 
-              with people.
+            <p>We are storytellers, strategists, and<br/> 
+              creators driven by the belief that <b>every<br/> 
+              design should have a purpose.</b> Our <br/>
+              mission is simple: to craft meaningful <br/> 
+              experiences that resonate with people.
             </p>
         </div>
       </div>
