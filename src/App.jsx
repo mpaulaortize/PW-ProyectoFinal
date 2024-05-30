@@ -1,5 +1,7 @@
 import React from "react";
+import { AuthProvider } from "./auth/firebase/authContext"; 
 
+import PrivateRoute from "./pages/router/PrivateRouter";
 import { Routes, Route } from "react-router-dom";
 import { NavBar } from "./components/NavBar/NavBar";
 import OurPeople from "./pages/OurPeoplePage/OurPeoplePage";
@@ -14,15 +16,25 @@ export function App() {
   return (
     <>
       <div>
-        <NavBar /> 
-        <Routes>
-          <Route path="/" element={<Landing />} />
-          <Route path="/work" element={<WorkPage />} />
-          <Route path="/sobre-nosotros" element={<OurPeople />} />
-          <Route path="/contacto" element={<ContactUs />} />
-          <Route path="/Upload" element={<UploadWork />} />
-          <Route path="/Login" element={<Login />} />
-        </Routes>
+        <AuthProvider>
+            <NavBar /> 
+            <Routes>
+              <Route path="/" element={<Landing />} />
+              <Route path="/work" element={<WorkPage />} />
+              <Route path="/sobre-nosotros" element={<OurPeople />} />
+              <Route path="/contacto" element={<ContactUs />} />
+              <Route path="/Upload" element={<UploadWork />} />
+              <Route path="/Login" element={<Login />} />
+              <Route
+                path="/Upload"
+                element={
+                  <PrivateRoute>
+                    <UploadWork />
+                  </PrivateRoute>
+                }
+              />
+            </Routes>
+        </AuthProvider>    
       </div>
     </>
   );
