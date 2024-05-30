@@ -38,7 +38,7 @@
 }
 
 h3 {
-  margin: 5px;
+  margin-bottom: 5px;
   font-size: 16px;
 }
 
@@ -82,6 +82,7 @@ p {
   font-family: "Inter", sans-serif;
   font-size: 14px;
   display: flex;
+  margin-top: 20px;
   width: 230px;
   height: 40px;
   border-radius: 50px;
@@ -99,8 +100,10 @@ p {
   border: 1px solid #080223;
 }
 
-.image-preview {
+.image-previews {
+  display: flex;
   margin-top: 20px;
+  gap: 20px;
 }
 
 .description {
@@ -141,10 +144,31 @@ textarea {
 }
 
 .cover-rectangle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 240px;
-  width: 380px;
+  width: 280px;
   background-color: #f9f9f9;
   border-radius: 10px;
+}
+
+.cover-btn {
+  display: flex;
+  width: 80px;
+  height: 80px;
+  border-radius: 50px;
+  border-width: 1px;
+  background-color: #080223;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+}
+
+.cover-btn p {
+  color: #ffff;
+  font-family: "Inter", sans-serif;
+  font-size: 54px;
 }
 
 .menus {
