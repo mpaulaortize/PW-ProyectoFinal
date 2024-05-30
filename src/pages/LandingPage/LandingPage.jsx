@@ -1,7 +1,19 @@
 import { Footer } from "../../components/Footer/Footer";
 import "./LandingPage.css";
 import React from "react";
+import { useNavigate } from "react-router-dom";
+
 export function Landing() {
+    const navigate = useNavigate();
+
+    const handleButtonClick = () => {
+        navigate("/contacto");
+    };
+
+    const handleClick = () => {
+        navigate("/work")
+    }
+
   return (
     <main className="landing-container">
     <div className="background-land">
@@ -12,7 +24,7 @@ export function Landing() {
              DESIGNING WITH PURPOSE.</h1>
             <h4>Graphic Design | Brand Design | Web Design</h4>
             <div className="btn-container">
-                <button className="btn-land">
+                <button className="btn-land" onClick={handleButtonClick}>
                     <span className="btn-txt">Let's work together</span>
                 </button>
             </div>
@@ -41,11 +53,11 @@ export function Landing() {
             firm believers that every design should be <br/>
             anchored in a thoughtful strategy.</p>
         </div>
-        <div className="scroll-container">
+        <div className="scroll-container" onClick={handleClick}>
             <img src='../../../public/imgs/Lina/dosTazas.png'/>
             <img src='../../../public/imgs/Lina/dTazasApp.png'/>
         </div>
-        <div className="scrollD-container">
+        <div className="scrollD-container" onClick={handleClick}>
         <img src='../../../public/imgs/Lina/dtdc.svg'/>
         <img src='../../../public/imgs/Lina/dtdcd.svg'/>
         <img src='../../../public/imgs/Lina/dtdc.svg'/>

@@ -5,7 +5,6 @@ import PrivateRoute from "./pages/router/PrivateRouter";
 import { Routes, Route } from "react-router-dom";
 import { NavBar } from "./components/NavBar/NavBar";
 import OurPeople from "./pages/OurPeoplePage/OurPeoplePage";
-import Inicio from "./pages/HomePage/HomePage";
 import ContactUs from "./pages/ContactUsPage/ContactUsPage";
 import WorkPage from "./pages/WorkPage/WorkPage";
 import UploadWork from "./pages/UploadWork/Uploadwork";
