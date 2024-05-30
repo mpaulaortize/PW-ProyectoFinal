@@ -12,6 +12,7 @@
     "vite": "^5.2.0"
   },
   "dependencies": {
+    "@vitejs/plugin-react": "^4.3.0",
     "dom": "^0.0.3",
     "firebase": "^10.12.2",
     "reacr": "^1.0.0",

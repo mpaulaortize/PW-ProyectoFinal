@@ -4,38 +4,51 @@ import "./Uploadwork.css";
 import { Footer } from "../../components/Footer/Footer";
 import { useState } from "react";
 
+import { collection, addDoc } from "firebase/firestore";
+import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { db } from "../../auth/firebase/firebase";
+import { update } from "firebase/database";
+
 function Upload() {
   const [title, setTitle] = useState("");
   const [image, setImage] = useState(null);
-  const [description, setDescription] = useState("");
-  const [project, setProject] = useState("");
-  const [author, setAuthor] = useState("");
-  const [error, setError] = useState("");
 
-  const handleSendClick = () => {
-    if (!title || !image || !description || !project || !author) {
-      setError("Please fill in all fields");
-      if (!title) setError("Please fill title");
-      if (!description) setError("Please fill description");
-      if (!image) setError("Please select an image");
-      if (!project) setError("Please select a type of proyect");
-      if (!author) setError("Please select an author");
+  async function handleUpload(e) {
+    e.preventDefault();
+    const formData = Object.fromEntries(new FormData(e.target));
+    const projectsCollection = collection(db, "portfolio");
+  
+    if (window.confirm("Are you sure you want to upload this project?")) {
+      console.log(formData);
+    } else { 
       return;
     }
-
-    console.log("Title:", title);
-    console.log("Description:", description);
-    console.log("Image:", image);
-    console.log("Type of Project:", project);
-    console.log("Author:", author);
-    setError("");
-
-    setTitle("");
-    setDescription("");
-    setImage("");
-    setProject("");
-    setAuthor("");
-  };
+  
+    const storage = getStorage();
+    const storageRef = ref(storage, "images/" + formData.image.name);
+    const uploadTask = uploadBytesResumable(storageRef, formData.image);
+  
+    uploadTask.on(
+      "state_changed",
+      (snapshot) => {
+        var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        console.log("Upload is " + progress + "% done");
+      },
+      (error) => {
+        console.log(error);
+      },
+      () => {
+        getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+          console.log('File available at', downloadURL);
+        
+          addDoc(projectsCollection, {
+            ...formData,
+            image: downloadURL, 
+          });
+        });
+      }
+    );
+  }
 
   const changeImage = (e) => {
     console.log(e.target.files);
@@ -58,14 +71,14 @@ function Upload() {
           </h1>
         </div>
       </div>
-      <div className="upload-container">
+
+      <form onSubmit={handleUpload} className="upload-container">
         <div className="title">
           <h3>Title</h3>
           <input
             type="text"
             className="title-input"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
+            name="title"
             required
           ></input>
         </div>
@@ -83,6 +96,7 @@ function Upload() {
               <input
                 id="file-upload"
                 type="file"
+                name="image"
                 accept="image/*"
                 multiple
                 onChange={(e) => {
@@ -114,8 +128,7 @@ function Upload() {
           <input
             type="text"
             className="description-input"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
+            name="description"
             required
           ></input>
         </div>
@@ -124,8 +137,7 @@ function Upload() {
             <h4>Type of project</h4>
             <select
               className="project"
-              value={project}
-              onChange={(e) => setProject(e.target.value)}
+              name="type_project"
               required
             >
               <option value="" disabled hidden>
@@ -140,8 +152,7 @@ function Upload() {
             <h4>Author(s)</h4>
             <select
               className="author"
-              value={author}
-              onChange={(e) => setAuthor(e.target.value)}
+              name="author"
               required
             >
               <option value="" disabled hidden>
@@ -154,22 +165,17 @@ function Upload() {
             </select>
           </div>
         </div>
-        {error && <div className="error-upload">{error}</div>}
         <div className="buttons">
           <button className="draft-btn" href=" ">
             Save as draft
           </button>
           <button
             className="publish-btn"
-            onClick={() => {
-              handleSendClick();
-              setImage(null);
-            }}
           >
             Publish
           </button>
         </div>
-      </div>
+      </form>
       <Footer />
     </>
   );
